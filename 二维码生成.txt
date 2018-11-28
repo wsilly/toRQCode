@@ -2,10 +2,10 @@ zxing:
 https://github.com/zxing
 
 QRCode
-Éú³É£ºhttp://www.swetake.com/qrcode/index-e.html
-¶ÁÈ¡£ºhttp://osdn.jp/projects/qrcode/
+ç”Ÿæˆåœ°å€ï¼šhttp://www.swetake.com/qrcode/index-e.html
+æ‰«ç åœ°å€ï¼šhttp://osdn.jp/projects/qrcode/
 
 jquery-qrcode:
 http://github.com/jeromeetienne/jquery-qrcode
 
-ÈçºÎ¼ÓÉÏlogo?
+äºŒç»´ç å¦‚ä½•åŠ ä¸Š logo ?
