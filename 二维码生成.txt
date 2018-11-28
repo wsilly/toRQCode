@@ -1,0 +1,11 @@
+zxing:
+https://github.com/zxing
+
+QRCode
+生成：http://www.swetake.com/qrcode/index-e.html
+读取：http://osdn.jp/projects/qrcode/
+
+jquery-qrcode:
+http://github.com/jeromeetienne/jquery-qrcode
+
+如何加上logo?
