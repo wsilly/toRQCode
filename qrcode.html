@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生成二维码</title>
+		<link href="css/qrcode.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.qrcode.min.js"></script>
+	</head>
+	<body>
+		<img id="qrCodeIco" src="img/logo.png" style="position: absolute;width: 55px; height: 55px;" />
+		<h4>生成的二维码:</h4>
+		<div id="qr"></div>
+	</body>
+	<script>
+		$("#qr").qrcode({
+			render: "canvas", // 渲染方式有table方式（IE兼容）和canvas方式
+			width: 260, //宽度
+			height: 260, //高度
+			text: utf16to8("我爱付婷婷"), //内容
+			typeNumber: -1, //计算模式
+			correctLevel: 2, //二维码纠错级别
+			background: "#ffffff", //背景颜色
+			foreground: "#000000", //二维码颜色
+		});
+
+		// 解决中文乱码
+		function utf16to8(str) {
+			var out, i, len, c;
+			out = "";
+			len = str.length;
+			for (i = 0; i < len; i++) {
+				c = str.charCodeAt(i);
+				if ((c >= 0x0001) && (c <= 0x007F)) {
+					out += str.charAt(i);
+				} else if (c > 0x07FF) {
+					out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+					out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+					out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+				} else {
+					out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+					out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+				}
+			}
+			return out;
+		}
+
+		var margin_top = "140px";
+		var margin_left = "102px";
+		$("#qrCodeIco").css({
+			"margin-top" : margin_top,
+			"margin-left" : margin_left
+			});
+	</script>
+</html>
